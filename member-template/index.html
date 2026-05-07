@@ -38,13 +38,13 @@
     <!-- TABS -->
     <nav class="tabs-nav">
       <button class="tab-btn active" data-tab="profil">Profil</button>
-      <button class="tab-btn"        data-tab="parcours">Parcours</button>
+      <button class="tab-btn"        data-tab="parcours">Parcours scolaire</button>
     </nav>
 
     <!-- TAB : PROFIL -->
     <div class="tab-panel active" id="tab-profil">
       <div class="section-title">À propos</div>
-      <p id="fullBio" style="font-size:15px;line-height:1.8;color:rgba(240,237,230,0.8);margin-bottom:36px"></p>
+      <p id="fullBio" style="font-size:15px;line-height:1.8;color:var(--text);margin-bottom:36px"></p>
 
       <div class="section-title">Compétences</div>
       <div class="skills-wrap" id="skillsFull"></div>
@@ -80,6 +80,7 @@
   <script>
     /* ── Titre de l'onglet ── */
     document.title = 'CV — ' + MEMBER.name;
+    document.documentElement.style.setProperty('--accent', MEMBER.color || '#c8f060');
 
     /* ── Photo ── */
     const photoWrap = document.getElementById('photoWrap');
@@ -135,7 +136,7 @@
 
     /* ── Timeline parcours ── */
     const timeline = document.getElementById('timeline');
-    (MEMBER.parcours || []).forEach(entry => {
+    (MEMBER.parcours_scolaire || MEMBER.parcours || []).forEach(entry => {
       timeline.innerHTML += `
         <div class="timeline-entry">
           <div class="timeline-dot" style="background:${MEMBER.color || '#c8f060'}"></div>

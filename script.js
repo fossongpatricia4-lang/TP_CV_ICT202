@@ -15,7 +15,7 @@
  */
 
 const MEMBERS = [
-  { folder: "alice-mbarga",  name: "Alice Mbarga",  role: "Développeuse Front-end", color: "#c8f060", initials: "AM" },
+  { folder: "Fossong-Patricia",  name: "Fossong Tsofack Patricia",  role: "Développeuse Front-end et UI/UX Designer", color: "#60c5f0", initials: "FP" },
   { folder: "bruno-essono",  name: "Bruno Essono",  role: "Développeur Back-end",   color: "#60c8f0", initials: "BE" },
   // Ajoute les autres membres ici :
   // { folder: "prenom-nom", name: "Prénom Nom", role: "Ton rôle", color: "#rrggbb", initials: "XX" },
@@ -72,6 +72,7 @@ function renderCards(data) {
       <div class="card-footer">
         <a class="parcours-link" href="${m.folder}/index.html">
           ${arrowSVG()} Parcours
+
         </a>
       </div>
     `;
